@@ -14,7 +14,7 @@ class _CardProvinceState extends State<CardProvince> {
   Widget build(BuildContext context) {
     Province p = widget.prov;
     return Card(
-      color: Color(0xFFFFFFF),
+      color: Color.fromARGB(15, 0, 0, 0),
       margin: const EdgeInsets.fromLTRB(16, 8, 16, 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       elevation: 2,

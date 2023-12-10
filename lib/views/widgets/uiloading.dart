@@ -10,7 +10,7 @@ class UiLoading {
       color: Colors.black12,
       child: const SpinKitFadingCircle(
         size: 50,
-        color: Colors.purple,
+        color: Colors.lightBlueAccent,
       ),
     );
   }
@@ -20,10 +20,10 @@ class UiLoading {
       alignment: Alignment.center,
       width: 30,
       height: 30,
-      color: Colors.transparent,
+      color: Color.fromARGB(255, 0, 0, 0),
       child: const SpinKitFadingCircle(
         size: 30,
-        color: Color(0xFF00BEFD),
+        color: Color.fromARGB(255, 0, 191, 255),
       ),
     );
   }

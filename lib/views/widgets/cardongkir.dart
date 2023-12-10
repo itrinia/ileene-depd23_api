@@ -20,7 +20,7 @@ class _CardOngkirState extends State<CardOngkir> {
         elevation: 3,
         child: InkWell(
           onTap: () {},
-          splashColor: const Color(0xFF43A7FF),
+          splashColor: Color.fromARGB(255, 0, 136, 255),
           child: ListTile(
             contentPadding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
             leading: const CircleAvatar(
@@ -48,7 +48,7 @@ class _CardOngkirState extends State<CardOngkir> {
                 const SizedBox(height: 8),
                 Text(
                   "Estimasi sampai: ${c.cost!.elementAt(0).etd}",
-                  style: TextStyle(fontSize: 12, color: Colors.green),
+                  style: TextStyle(fontSize: 12, color: const Color.fromARGB(255, 0, 255, 8)),
                 )
               ],
             ),

@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                                     style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.purple),
+                                        color: Colors.lightBlueAccent),
                                   ),
                                 )),
                             Padding(
@@ -167,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                                     style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.purple),
+                                        color: Colors.lightBlueAccent),
                                   ),
                                 )),
                             Padding(
@@ -273,13 +273,13 @@ class _HomePageState extends State<HomePage> {
                                                   });
                                             } else if (snapshot.hasError) {
                                               return const Text(
-                                                  "Tidak ada data.");
+                                                  "no data");
                                             }
 
                                             if (isProvinceOriginSelected ==
                                                 false) {
                                               return Text(
-                                                  "Pilih provinsi asal terlebih dahulu");
+                                                  "Pilih provinsi asal");
                                             } else {
                                               return UiLoading.loadingSmall();
                                             }
@@ -300,7 +300,7 @@ class _HomePageState extends State<HomePage> {
                                     style: TextStyle(
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.purple),
+                                        color: Colors.lightBlueAccent),
                                   ),
                                 )),
                             Padding(
@@ -417,7 +417,7 @@ class _HomePageState extends State<HomePage> {
                                             if (isProvinceDestinationSelected ==
                                                 false) {
                                               return Text(
-                                                  "Pilih provinsi tujuan terlebih dahulu");
+                                                  "Pilih provinsi terlebih dulu");
                                             } else {
                                               return UiLoading.loadingSmall();
                                             }
@@ -448,7 +448,7 @@ class _HomePageState extends State<HomePage> {
                                       isLoading = false;
                                     });
                                   } else {
-                                    // UiToast.toastErr("Semua field harus diisi");
+                                    UiToast.toastErr("Semua field harus diisi");
                                   }
                                 },
                                 child: Text("Hitung Estimasi Harga"))
@@ -466,7 +466,7 @@ class _HomePageState extends State<HomePage> {
                               ? const Align(
                                   alignment: Alignment.topCenter,
                                   child: Text(
-                                      "Silakan isi semua field terlebih dahulu"))
+                                      "Silakan isi semuanyaa terlebih dulu"))
                               : ListView.builder(
                                   itemCount: listCosts.length,
                                   itemBuilder: (context, index) {
