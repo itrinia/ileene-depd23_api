@@ -1,4 +1,4 @@
-import 'package:depd23_apifix/models/models.dart';
+import 'package:depd23_api/models/models.dart';
 import 'package:flutter/material.dart';
 
 class CardProvince extends StatefulWidget {

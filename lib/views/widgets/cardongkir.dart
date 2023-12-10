@@ -1,4 +1,4 @@
-part of "widget.dart";
+part of "widgets.dart";
 
 class CardOngkir extends StatefulWidget {
   final Costs costs;

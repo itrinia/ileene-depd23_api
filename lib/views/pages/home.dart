@@ -8,7 +8,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Province> provinceData = []; ///
+  List<Province> provinceData = [];
+
+  ///
   bool isLoading = false;
   String selectedCourier = 'jne';
   var kurir = ['jne', 'pos', 'tiki'];
@@ -20,11 +22,11 @@ class _HomePageState extends State<HomePage> {
   dynamic selectedProvOrigin;
   dynamic selectedProvDestination;
 
-  Future<List<Province>> getProvinces() async{
+  Future<List<Province>> getProvinces() async {
     dynamic provinceData;
     await MasterDataService.getProvince().then((value) {
       setState(() {
-        provinceData = value; 
+        provinceData = value;
         isLoading = false;
       });
     });
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   dynamic cityDataDestination;
   dynamic selectedCityDestination;
 
-  Future<List<City>> getCities(var provId) async{
+  Future<List<City>> getCities(var provId) async {
     dynamic city;
     await MasterDataService.getCity(provId).then((value) {
       setState(() {
@@ -67,11 +69,11 @@ class _HomePageState extends State<HomePage> {
       print(listCosts.toString());
     });
   }
-  
+
   @override
-   void initState() {
-      super.initState();
-      listProvince = getProvinces();
+  void initState() {
+    super.initState();
+    listProvince = getProvinces();
   }
 
   @override
@@ -79,11 +81,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text("Hitung Ongkir", style: TextStyle(fontWeight: FontWeight.bold),),
+        title: const Text(
+          "Hitung Ongkir",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-       child: Container(
+        child: Container(
           height: 1400,
           child: Stack(
             children: [
@@ -98,7 +103,6 @@ class _HomePageState extends State<HomePage> {
                         flex: 3,
                         child: Column(
                           children: [
-                      
                             const Padding(
                                 // Pilih courier
                                 padding: EdgeInsets.all(16.0),
@@ -190,7 +194,8 @@ class _HomePageState extends State<HomePage> {
                                                       color: Colors.black),
                                                   hint: selectedProvOrigin ==
                                                           null
-                                                      ? Text('Pilih provinsi asal')
+                                                      ? Text(
+                                                          'Pilih provinsi asal')
                                                       : Text(selectedProvOrigin
                                                           .province),
                                                   items: snapshot.data!.map<
@@ -323,7 +328,8 @@ class _HomePageState extends State<HomePage> {
                                                       color: Colors.black),
                                                   hint: selectedProvDestination ==
                                                           null
-                                                      ? Text('Pilih provinsi tujuan')
+                                                      ? Text(
+                                                          'Pilih provinsi tujuan')
                                                       : Text(
                                                           selectedProvDestination
                                                               .province),
@@ -378,7 +384,8 @@ class _HomePageState extends State<HomePage> {
                                                       color: Colors.black),
                                                   hint: selectedCityDestination ==
                                                           null
-                                                      ? Text('Pilih kota tujuan')
+                                                      ? Text(
+                                                          'Pilih kota tujuan')
                                                       : Text(
                                                           selectedCityDestination
                                                               .cityName),
@@ -433,7 +440,6 @@ class _HomePageState extends State<HomePage> {
                                       isCityOriginSelected == true &&
                                       selectedCourier.isNotEmpty &&
                                       ctrlBerat.text.isNotEmpty) {
-                                        
                                     setState(() {
                                       isLoading = true;
                                     });
@@ -442,14 +448,14 @@ class _HomePageState extends State<HomePage> {
                                       isLoading = false;
                                     });
                                   } else {
-                                    UiToast.toastErr("Semua field harus diisi");
+                                    // UiToast.toastErr("Semua field harus diisi");
                                   }
                                 },
                                 child: Text("Hitung Estimasi Harga"))
                           ],
                         ),
                       ),
-                    
+
                       //Card hasil ongkir
                       Flexible(
                         flex: 4,
@@ -459,7 +465,8 @@ class _HomePageState extends State<HomePage> {
                           child: listCosts.isEmpty
                               ? const Align(
                                   alignment: Alignment.topCenter,
-                                  child: Text("Silakan isi semua field terlebih dahulu"))
+                                  child: Text(
+                                      "Silakan isi semua field terlebih dahulu"))
                               : ListView.builder(
                                   itemCount: listCosts.length,
                                   itemBuilder: (context, index) {
